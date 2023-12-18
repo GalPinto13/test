@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Checkout your Git repository
                 script {
-                    git branch: 'main', credentialsId: 'GalPinto13', url: 'https://github.com/GalPinto13/test'
+                    git branch: 'main', credentialsId: 'GPgit', url: 'https://github.com/GalPinto13/test'
                 }
             }
         }
