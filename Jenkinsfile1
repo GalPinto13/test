@@ -18,7 +18,7 @@ pipeline {
                         label 'windows'
                     }
                     steps {
-                        bat 'timout /t 10 /nobreak'
+                        bat 'timeout /t 10 /nobreak'
                     }
                 }
             }
