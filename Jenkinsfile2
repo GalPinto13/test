@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Print Branch Name') {
+            steps {
+                script {
+
+
+                    // Extract only the branch name
+                    branchName = env.GIT_BRANCH.replaceAll('refs/heads/', '')
+
+                    // Print the branch name
+                    echo "Current Git branch: ${branchName}"
+
+                    if (branchName.contains('feature')) {
+                                            echo "The branch name is 'feature'"
+                                        } else if ((branchName.contains('main'))) {
+                                            echo "The branch name 'main'"
+                                        }
+                }
+            }
+        }
+    }
+}
