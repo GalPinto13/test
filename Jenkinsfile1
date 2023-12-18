@@ -1,0 +1,27 @@
+pipeline {
+    agent none
+
+    stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Agent 1') {
+                    agent {
+                        label 'master'
+                    }
+                    steps {
+                        sh 'sleep 10'
+                    }
+                }
+
+                stage('Agent 2') {
+                    agent {
+                        label 'windows'
+                    }
+                    steps {
+                        bat 'timout /t 10 /nobreak'
+                    }
+                }
+            }
+        }
+    }
+}
