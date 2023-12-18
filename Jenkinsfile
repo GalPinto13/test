@@ -15,7 +15,7 @@ pipeline {
             steps {
                 // Run the Python test script
 
-                    sh 'test_add.py'
+                    sh './test_add.py'
 
             }
         }
