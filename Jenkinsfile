@@ -1,12 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'qnib/pytest'
+        }
+    }
 
     stages {
-        stage('Checkout') {
+         stage('Install Dependencies') {
             steps {
-                // Checkout your Git repository
                 script {
-                    git branch: 'main', url: 'https://github.com/GalPinto13/test'
+                    sh 'pip install pytest'
                 }
             }
         }
@@ -16,7 +19,6 @@ pipeline {
                 // Run the Python test script
 
                     sh 'python -m pytest'
-
             }
         }
     }
