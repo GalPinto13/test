@@ -14,8 +14,12 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run the Python test script
+                    {
+                    sh 'python -m ./test_add.py'
+                    }
 
-                    sh 'python ./test_add.py'
+
+
 
             }
         }
