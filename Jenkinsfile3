@@ -9,8 +9,8 @@ pipeline {
                         label 'master'
                     }
                     steps {
-                        def osVersion = System.getProperty('os.version')
-                        println "Linux Operating System Version: ${osVersion}"
+                        
+                        println "Linux Operating System Version: ${System.getProperty('os.version')}"
                     }
                 }
 
@@ -19,8 +19,8 @@ pipeline {
                         label 'windows'
                     }
                     steps {
-                        def osVersion = System.getProperty('os.version')
-                        println "Windows Operating System Version: ${osVersion}"
+                       
+                        println "Windows Operating System Version: ${System.getProperty('os.version')}"
                     }
                 }
             }
