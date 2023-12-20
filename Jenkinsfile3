@@ -10,7 +10,13 @@ pipeline {
                     }
                     steps {
                         
-                        println "Linux Operating System Version: ${env.OS_VERSION}"
+                        script {
+                    def osName = env.OS
+                    def osVersion = env.OS_VERSION
+
+                    echo "Operating System: ${osName}"
+                    echo "Operating System Version: ${osVersion}"
+                }
                     }
                 }
 
@@ -20,7 +26,13 @@ pipeline {
                     }
                     steps {
                        
-                        println "Windows Operating System Version: ${env.OS_VERSION}"
+                        script {
+                    def osName = env.OS
+                    def osVersion = env.OS_VERSION
+
+                    echo "Operating System: ${osName}"
+                    echo "Operating System Version: ${osVersion}"
+                }
                     }
                 }
             }
