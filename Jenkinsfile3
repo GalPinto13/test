@@ -10,7 +10,7 @@ pipeline {
                     }
                     steps {
                         
-                        println "Linux Operating System Version: ${System.getProperty('os.version')}"
+                        println "Linux Operating System Version: ${env.OS_VERSION}"
                     }
                 }
 
@@ -20,7 +20,7 @@ pipeline {
                     }
                     steps {
                        
-                        println "Windows Operating System Version: ${System.getProperty('os.version')}"
+                        println "Windows Operating System Version: ${env.OS_VERSION}"
                     }
                 }
             }
