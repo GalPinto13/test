@@ -22,7 +22,7 @@ pipeline {
 
                 stage('Agent 2') {
                     agent {
-                        label 'windows'
+                        label 'SlaveWindows'
                     }
                     steps {
                        
