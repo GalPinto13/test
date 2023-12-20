@@ -11,8 +11,7 @@ pipeline {
                     steps {
                         
                         script {
-                    
-
+                    println 'OS in linux:'
                     sh 'uname -a'
                     
                 }
@@ -26,6 +25,7 @@ pipeline {
                     steps {
                        
                         script {
+println 'OS in windows:'
                     bat 'systeminfo | find "OS Version"'
                 }
                     }
