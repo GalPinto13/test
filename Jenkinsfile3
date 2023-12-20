@@ -11,11 +11,10 @@ pipeline {
                     steps {
                         
                         script {
-                    def osName = env.OS
-                    def osVersion = env.OS_VERSION
+                    
 
-                    echo "Operating System: ${osName}"
-                    echo "Operating System Version: ${osVersion}"
+                    sh 'uname -a'
+                    
                 }
                     }
                 }
@@ -27,11 +26,7 @@ pipeline {
                     steps {
                        
                         script {
-                    def osName = env.OS
-                    def osVersion = env.OS_VERSION
-
-                    echo "Operating System: ${osName}"
-                    echo "Operating System Version: ${osVersion}"
+                    bat 'systeminfo | find "OS Version"'
                 }
                     }
                 }
