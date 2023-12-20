@@ -1,0 +1,23 @@
+pipeline {
+    agent {
+        docker {
+            // Build the Docker image from the Dockerfile
+            image 'Dockerfile'
+        }
+    }
+
+    stages {
+        stage('Run Commands Inside Custom Image') {
+            steps {
+                script {
+                    // This step runs commands inside a container created from the custom image
+                    // You may need to adjust the commands based on your requirements
+                    sh 'ls -l'
+                    sh 'echo "Hello, Docker!"'
+                    sh 'uname -a'
+                    // Add more commands as needed
+                }
+            }
+        }
+    }
+}
