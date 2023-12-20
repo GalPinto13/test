@@ -1,20 +1,29 @@
 pipeline {
     agent {
         docker {
-            // Build the Docker image from the Dockerfile
-            image 'Dockerfile'
+            image 'ubuntu:20.04'  // Base image for Jenkins agent
         }
     }
 
     stages {
+        stage('Build Custom Image') {
+            steps {
+                script {
+                    // This step builds a custom Docker image using a Dockerfile
+                    // Adjust the Dockerfile to include necessary dependencies
+                    docker.build('Dockerfile')
+                }
+            }
+        }
+
         stage('Run Commands Inside Custom Image') {
             steps {
                 script {
                     // This step runs commands inside a container created from the custom image
                     // You may need to adjust the commands based on your requirements
-                    sh 'ls -l'
-                    sh 'echo "Hello, Docker!"'
-                    sh 'uname -a'
+                    sh 'docker run Dockerfile ls -l'
+                    sh 'docker run Dockerfile echo "Hello, Docker!"'
+                    sh 'docker run Dockerfile uname -a'
                     // Add more commands as needed
                 }
             }
